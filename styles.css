@@ -1,7 +1,104 @@
 :root {
-    --project-background-color: #111;
+    --project-background-color: #2E2A3B;
+    --project-color: #E0E0E0;
+    --heading-font-family: 'Roboto Condensed', 'Sans-serif';
+    --normal-font-family: 'Roboto', 'Sans-serif';
+    --project-border-radius: 0.5rem;
+    --document-font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
     background-color: var(--project-background-color);
+    color: var(--project-color);
+    font-family: var(--normal-font-family);
+    font-size: var(--document-font-size);
+}
+
+:root h1,
+:root h2 {
+    font-family: var(--heading-font-family);
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 500px;
+    height: 500px;
+    padding: 1.5rem;
+    background-color: #1C1A29;
+    box-shadow: 0.1rem 0.1rem 0.5rem #1a1a1a;
+    border-radius: var(--project-border-radius);
+}
+
+.form-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-header h2{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-body {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.input-wrapper label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+
+}
+
+.input-wrapper input {
+    height: 1.5rem;
+    border-radius: var(--project-border-radius)
+
+}
+
+button {
+    background-color: #8A2BE2;
 }
