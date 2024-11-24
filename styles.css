@@ -1,6 +1,7 @@
 :root {
     --project-background-color: #2E2A3B;
     --project-color: #E0E0E0;
+    --project-highlight-color: #8A2BE2;
     --heading-font-family: 'Roboto Condensed', 'Sans-serif';
     --normal-font-family: 'Roboto', 'Sans-serif';
     --project-border-radius: 0.5rem;
@@ -12,12 +13,8 @@
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-input {
-    margin: 0;
-    padding: 0;
+    outline: none;
+    border: none;
     box-sizing: border-box;
 }
 
@@ -47,8 +44,9 @@ body {
 }
 
 .form-wrapper {
-    width: 500px;
-    height: 500px;
+    flex: 1 1 40%;
+    max-width: 40%;
+    min-width: calc(max(30%, 350px));
     padding: 1.5rem;
     background-color: #1C1A29;
     box-shadow: 0.1rem 0.1rem 0.5rem #1a1a1a;
@@ -62,15 +60,15 @@ body {
 }
 
 .form-header h2{
+    font-size: 2.5rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
 
-.form-body {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-header h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--project-highlight-color);
 }
 
 .form-content {
@@ -81,24 +79,75 @@ body {
     gap: 30px;
 }
 
+.form-body {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
 .input-wrapper {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    gap: 0.1rem;
+    flex: 1 0 47.5%;
 }
 
 .input-wrapper label {
-    font-size: 0.8rem;
-    opacity: 0.7;
-
+    font-size: 1rem;
+    opacity: 0.5;
+    margin-left: 0.15rem;
 }
 
 .input-wrapper input {
-    height: 1.5rem;
-    border-radius: var(--project-border-radius)
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    background-color: #282638;
+    padding-left: 1rem;
+    font-size: 1rem;
+    color: var(--project-color);
+}
 
+.input-wrapper input::placeholder {
+    color: var(--project-color);
+    opacity: 0.2;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.form-footer {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-footer p {
+    display: inline;
+    opacity: 0.5;
+}
+
+.form-footer a {
+    opacity: 1;
+    text-decoration: none;
+    color: var(--project-highlight-color);
+}
+
+.form-footer span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
 }
 
 button {
+    width: clamp(200px, 50%, 500px);
+    border-radius: var(--project-border-radius);
+    padding: 1rem 1rem;
     background-color: #8A2BE2;
 }
